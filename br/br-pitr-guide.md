@@ -103,6 +103,12 @@ Restore KV Files <--------------------------------------------------------------
     aws s3 rm --recursive s3://backup-101/snapshot-${date}
     ```
 
+## 任务监控及告警
+
+如前文所提到的，日志备份在任务下发之后，各个 TiKV 节点会持续往外部存储写入数据。此时你可以通过 TiKV Details 面板下，Log Backup 行中看到相应的监控数据。
+
+此外，如果想要在指标异常时获得通知，你可以参考[日志备份告警配置指南](/br/br-monitoring-and-alert.md#日志备份告警)来配置 Alert Manager。
+
 ## PITR 的性能指标
 
 - PITR 恢复速度，平均到单台 TiKV 节点：全量恢复为 280 GB/h，日志恢复为 30 GB/h
